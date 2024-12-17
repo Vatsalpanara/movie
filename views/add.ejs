@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Movie</title>
+    <link rel="stylesheet" href="../public/form.css"> <!-- Corrected link to CSS -->
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom right, #4facfe, #00f2fe);
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    section {
+        width: 100%;
+        max-width: 500px;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .tital h1 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-add input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        outline: none;
+        transition: all 0.3s ease;
+    }
+
+    .form-add input:focus {
+        border-color: #4facfe;
+        box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+    }
+
+    .file-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+
+    .file-label span {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #4facfe;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .file-label span:hover {
+        background: #00f2fe;
+    }
+
+    .inp button {
+        width: 100%;
+        padding: 12px;
+        background: #4facfe;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .inp button:hover {
+        background: #00f2fe;
+    }
+</style>
+<body>
+    <section>
+        <div class="form-container">
+            <div class="tital">
+                <h1>Add a New Movie</h1>
+            </div>
+            <div class="frm-inp">
+                <form class="form-add" action="/send" method="post" enctype="multipart/form-data">
+                    <div class="file-label">
+                        <input type="file" name="image" id="image">
+                        <span>Upload Movie Poster</span>
+                    </div>
+                    <div class="i1">
+                        <input type="text" placeholder="Movie Name" name="name" required>
+                    </div>
+                    <div class="i2">
+                        <input type="text" placeholder="Title" name="title" required>
+                    </div>
+                    <div class="i3">
+                        <input type="date" placeholder="Release Date" name="date" required>
+                    </div>
+                    <div class="i4">
+                        <input type="time" placeholder="Duration" name="time" required>
+                    </div>
+                    <div class="inp">
+                        <button type="submit">Add Movie</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
